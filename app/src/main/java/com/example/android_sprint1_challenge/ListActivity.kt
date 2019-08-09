@@ -23,7 +23,7 @@ class  ListActivity : AppCompatActivity() {
 
         btn_add_movie.setOnClickListener {
             val intent = Intent(this, EditPage::class.java)
-            startActivity(intent)
+            startActivityForResult(intent ,ADD_MOVIE_CODE)
         }
 
         fun createTextView(movie: Movie, index: Int): TextView {
