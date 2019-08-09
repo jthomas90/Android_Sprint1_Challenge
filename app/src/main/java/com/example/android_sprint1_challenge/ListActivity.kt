@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class  ListActivity : AppCompatActivity() {
 
     var movieList = mutableListOf<Movie>()
-    var couunter = 0
+    var counter = 0
 
     companion object {
         const val ADD_MOVIE_CODE = 13

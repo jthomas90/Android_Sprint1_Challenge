@@ -11,5 +11,6 @@ class Movie (string: String? = null, var title:String) :Serializable{
 
 
 
+
 }
 //needs a boolean val
