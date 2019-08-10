@@ -2,7 +2,7 @@ package model
 
 import java.io.Serializable
 
-class Movie (switch: Boolean? = null, var title:String = "") : Serializable{
+class Movie(switch: String = null, var title:String = "") : Serializable{
 
     companion object {
         const val MOVIE_TAG = "movie"

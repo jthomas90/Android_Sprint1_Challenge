@@ -8,7 +8,7 @@
         tools:context="ui.EditPage">
 
     <EditText
-            android:id="@+id/btn_edit_movie"
+            android:id="@+id/et_edit_movie"
             android:layout_width="280dp"
             android:layout_height="46dp"
             android:layout_marginStart="10dp"
@@ -23,8 +23,8 @@
             android:id="@+id/btn_switch1"
             android:layout_width="110dp"
             android:layout_height="46dp"
-            android:layout_alignEnd="@+id/btn_edit_movie"
-            android:layout_alignRight="@+id/btn_edit_movie"
+            android:layout_alignEnd="@+id/et_edit_movie"
+            android:layout_alignRight="@+id/et_edit_movie"
             android:layout_marginTop="400dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"

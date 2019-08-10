@@ -38,7 +38,7 @@ class  ListActivity : AppCompatActivity() {
 
         newMovieView.setOnClickListener {
             val textViewIntent = Intent(this, EditPage::class.java)
-            textViewIntent.putExtra("TVMovie", movieList[newMovieView.id])   //key value pair - key is a password //newMovieView.id will increase and match index
+                textViewIntent.putExtra("TVMOVIE", movieList[newMovieView.id])   //key value pair - key is a password //newMovieView.id will increase and match index
             movieList.removeAt(newMovieView.id)  // remove book from list
             startActivityForResult(textViewIntent, REQUEST_CODE_EDIT_MOVIE)
         }
