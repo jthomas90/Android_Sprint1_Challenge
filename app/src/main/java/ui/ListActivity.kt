@@ -24,8 +24,8 @@ class  ListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         btn_add_movie.setOnClickListener {
-            val intent = Intent(this, EditPage::class.java)
-            startActivityForResult(intent , REQUEST_CODE_EDIT_MOVIE)
+            val addMovieIntent = Intent(this, EditPage::class.java)
+            startActivityForResult(addMovieIntent , REQUEST_CODE_EDIT_MOVIE)
         }
 
     }
@@ -38,7 +38,7 @@ class  ListActivity : AppCompatActivity() {
 
         newMovieView.setOnClickListener {
             val textViewIntent = Intent(this, EditPage::class.java)
-            textViewIntent.putExtra("movieKey", movieList[newMovieView.id])   //key value pair - key is a password //newMovieView.id will increase and match index
+            textViewIntent.putExtra("TVMovie", movieList[newMovieView.id])   //key value pair - key is a password //newMovieView.id will increase and match index
             movieList.removeAt(newMovieView.id)  // remove book from list
             startActivityForResult(textViewIntent, REQUEST_CODE_EDIT_MOVIE)
         }
@@ -48,24 +48,27 @@ class  ListActivity : AppCompatActivity() {
 
     fun populateMovieList(index: Int) {
         ll_movie_list.removeAllViews()
-        for (movie in movieList) {
-            ll_movie_list.addView(createTextView(movie, index))
-        }
-
-        fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-            if (requestCode == REQUEST_CODE_EDIT_MOVIE && resultCode == Activity.RESULT_OK) {
-                val imageData = data?.getSerializableExtra(Movie.MOVIE_TAG) as Movie
-                movieList.add(imageData)
-                populateMovieList(movieList.size -1)
-            }
+        for((counter, movie) in movieList.withIndex()){
+            ll_movie_list.addView(createTextView(movie, counter))
         }
 
     }
 
-    //seperate functions
-    //onactivity result
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        if (requestCode == REQUEST_CODE_EDIT_MOVIE && resultCode == Activity.RESULT_OK) {
+            val newMovieData = data!!.getSerializableExtra("MOVIE") as Movie
+            movieList.add(newMovieData)
+            ll_movie_list.addView(createTextView(newMovieData, counter))
+            populateMovieList(movieList.size -1)
+            counter++
+        }
+    }
 
-    //onbackpressed
+
+    //
+
+    //onbackpressed!!
+    //
 
 
 
