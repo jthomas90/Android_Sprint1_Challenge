@@ -5,7 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_page2.*
-import java.io.Serializable
+import ui.Movie
 
 class EditPage : AppCompatActivity() {
     companion object {
@@ -32,9 +32,26 @@ class EditPage : AppCompatActivity() {
                 finish()
             }
 
+            btn_delete_button.setOnClickListener {
+
+            }
+
+            btn_switch1.setOnClickListener {
+                if (btn_switch1.isChecked) {
+                    //btn_edit_movie.text.toString().Paint.STRIKE_THRU_TEXT_FLAG);
+                }else{
+
+
+                }
+            }
+
         }
 
 
+
+    //add delete button
+
+    //
 
 
 
