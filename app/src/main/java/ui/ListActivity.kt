@@ -1,12 +1,13 @@
-package com.example.android_sprint1_challenge
+package ui
 
 import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.example.android_sprint1_challenge.R
 import kotlinx.android.synthetic.main.activity_main.*
-import ui.Movie
+import model.Movie
 
 
 class  ListActivity : AppCompatActivity() {
@@ -24,7 +25,7 @@ class  ListActivity : AppCompatActivity() {
 
         btn_add_movie.setOnClickListener {
             val intent = Intent(this, EditPage::class.java)
-            startActivityForResult(intent ,REQUEST_CODE_EDIT_MOVIE)
+            startActivityForResult(intent , REQUEST_CODE_EDIT_MOVIE)
         }
 
     }
@@ -36,8 +37,10 @@ class  ListActivity : AppCompatActivity() {
         newMovieView.text = movie.title
 
         newMovieView.setOnClickListener {
-            val textViewintent = Intent(this, EditPage::class.java)
-            startActivityForResult(intent, REQUEST_CODE_EDIT_MOVIE )
+            val textViewIntent = Intent(this, EditPage::class.java)
+            textViewIntent.putExtra("movieKey", movieList[newMovieView.id])   //key value pair - key is a password //newMovieView.id will increase and match index
+            movieList.removeAt(newMovieView.id)  // remove book from list
+            startActivityForResult(textViewIntent, REQUEST_CODE_EDIT_MOVIE)
         }
         return newMovieView
 
@@ -61,6 +64,8 @@ class  ListActivity : AppCompatActivity() {
 
     //seperate functions
     //onactivity result
+
+    //onbackpressed
 
 
 

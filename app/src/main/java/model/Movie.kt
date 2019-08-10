@@ -1,4 +1,4 @@
-package ui
+package model
 
 import java.io.Serializable
 
@@ -13,4 +13,4 @@ class Movie (switch: Boolean? = null, var title:String = "") : Serializable{
 
 
 }
-//needs a boolean val movie watched or not
+//needs a boolean val mo vie watched or not

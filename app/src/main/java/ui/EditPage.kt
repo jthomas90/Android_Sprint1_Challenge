@@ -1,11 +1,12 @@
-package com.example.android_sprint1_challenge
+package ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.android_sprint1_challenge.R
 import kotlinx.android.synthetic.main.activity_page2.*
-import ui.Movie
+import model.Movie
 
 class EditPage : AppCompatActivity() {
     companion object {
